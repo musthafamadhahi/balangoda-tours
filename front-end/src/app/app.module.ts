@@ -5,22 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './components/auth/user/user.component';
-import { SingInComponent } from './components/auth/user/sing-in/sing-in.component';
-import { SingUpComponent } from './components/auth/user/sing-up/sing-up.component';
+import { SignInComponent } from './components/auth/user/sign-in/sign-in.component';
+import { SignUpComponent } from './components/auth/user/sign-up/sign-up.component';
+import { UserService } from './shared/service/user.service';
+import { ReactiveFormsModule, FormsModule, FormGroup } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    SingInComponent,
-    SingUpComponent
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

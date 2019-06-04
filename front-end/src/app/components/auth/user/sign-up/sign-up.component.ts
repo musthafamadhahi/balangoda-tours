@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/service/user.service';
 
 @Component({
-  selector: 'app-sing-up',
-  templateUrl: './sing-up.component.html',
-  styleUrls: ['./sing-up.component.scss']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+// tslint:disable-next-line: max-line-length
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   showSucessMessage: boolean;
   serverErrorMessages: string;
 
-  constructor(private userService: UserService) { }
+  constructor(public userService: UserService) { }
 
   ngOnInit() {
   }
@@ -27,9 +28,9 @@ export class SignUpComponent implements OnInit {
       err => {
         if (err.status === 422) {
           this.serverErrorMessages = err.error.join('<br/>');
-        }
-        else
+        } else {
           this.serverErrorMessages = 'Something went wrong.Please contact admin.';
+        }
       }
     );
   }
