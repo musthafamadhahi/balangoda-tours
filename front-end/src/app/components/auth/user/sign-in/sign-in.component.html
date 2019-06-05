@@ -1,5 +1,5 @@
 <div>
-  <img src="assets/img/signup.png" id="icon" alt="User Icon" />
+  <img src="assets/img/signin.png" id="icon" alt="User Icon" />
 </div>
 <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
   <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex" required

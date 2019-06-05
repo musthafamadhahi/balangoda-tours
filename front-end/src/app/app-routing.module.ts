@@ -3,19 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './components/auth/user/user.component';
 import { SignInComponent } from './components/auth/user/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/user/sign-up/sign-up.component';
+import { LandingComponent } from './components/common/landing/landing.component';
 
 const routes: Routes = [
+  { path: '', component: LandingComponent},
   {
     path: 'signup', component: UserComponent,
     children: [{ path: '', component: SignUpComponent }]
-},
-{
+  },
+  {
     path: 'signin', component: UserComponent,
     children: [{ path: '', component: SignInComponent }]
-},
-{
+  },
+  {
     path: '', redirectTo: '/signin', pathMatch: 'full'
-}
+  }
 ];
 
 @NgModule({

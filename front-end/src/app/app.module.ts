@@ -10,13 +10,17 @@ import { SignUpComponent } from './components/auth/user/sign-up/sign-up.componen
 import { UserService } from './shared/service/user.service';
 import { ReactiveFormsModule, FormsModule, FormGroup } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './components/common/navbar/navbar.component';
+import { LandingComponent } from './components/common/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    NavbarComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,

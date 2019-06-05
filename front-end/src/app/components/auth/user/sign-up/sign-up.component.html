@@ -1,6 +1,6 @@
-<div>
-  <img src="/assets/img/signup.png" id="icon" alt="User Icon" />
-</div>
+<!-- <div>
+  <img src="/assets/img/signin.png" id="icon" alt="User Icon" />
+</div> -->
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
   <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
   required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">

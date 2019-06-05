@@ -1,0 +1,18 @@
+<nav class="transparent" >
+  <ul class="container">
+      <li class=""> <a class="navd" href=""> <b>Balangoda Tours</b></a></li>
+  </ul>
+  <div class="container">
+      <ul class="pull-right">
+          <li><a class="navd" href="/signin">ABOUT US</a></li>
+          <li><a class="navd" href="/services">SERVICES</a></li>
+          <!-- <li><a class="navd" *ngIf="isLoggedIn() && user.roles.admin === true" [routerLink]="['/admin/userprofile']">DASHBOARD</a></li>
+          <li><a class="navd" *ngIf="isLoggedIn() && user.roles.guide === true" [routerLink]="['/guide-dashboard']">DASHBOARD</a></li>
+          <li><a class="navd" *ngIf="isLoggedIn() && user.roles.tourist === true" [routerLink]="['/tour-dashboard']">DASHBOARD</a></li>
+          <li><a class="navd" *ngIf="isLoggedIn() && user.roles.tourist === true" [routerLink]="['/chats']">CHATS</a></li> -->
+          <!-- <li><a class="navd" href="">CHATS</a></li> -->
+          <li><a class="navd" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN</a> </li>
+          <li><a class="navd" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT</a></li>
+      </ul>
+  </div>
+</nav>
