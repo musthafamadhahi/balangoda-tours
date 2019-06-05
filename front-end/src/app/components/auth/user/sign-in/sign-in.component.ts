@@ -28,8 +28,10 @@ export class SignInComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.userService.login(form.value).subscribe(
       res => {
+// tslint:disable-next-line: no-string-literal
         this.userService.setToken(res['token']);
-        // this.router.navigateByUrl('/userprofile');
+        this.router.navigateByUrl('/');
+        console.log('logged in');
       },
       err => {
         this.serverErrorMessages = err.error.message;
