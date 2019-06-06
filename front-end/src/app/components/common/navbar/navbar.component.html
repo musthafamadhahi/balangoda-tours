@@ -1,17 +1,20 @@
 <nav class="transparent" >
-  <ul class="container">
-      <li class=""> <a class="navd" href=""> <b>Balangoda Tours</b></a></li>
-  </ul>
+  <th>
+      <ul class="container">
+          <a class="navd" href=""> <b>Balangoda Tours</b></a>
+      </ul>
+  </th>
+
   <div class="container">
       <ul class="pull-right">
-          <li><a class="navd" href="/about">ABOUT US</a></li>
-          <li><a class="navd" href="/services">SERVICES</a></li>
-          <li><a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/admin/dashboard']">admin DASHBOARD</a></li>
-          <li><a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/guide/dashboard']">guide DASHBOARD</a></li>
-          <li><a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/tour/dashboard']">tourist DASHBOARD</a></li>
-          <li><a class="navd" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN</a> </li>
-          <li><a class="navd" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}</a> </li>
-          <li><a class="navd" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT</a></li>
+          <a class="navd" href="/about">ABOUT US        </a>
+          <a class="navd" href="/services">SERVICES   </a>
+          <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/admin/dashboard']">admin DASHBOARD       </a>
+          <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/guide/dashboard']">guide DASHBOARD        </a>
+          <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/tourist/dashboard']">tourist DASHBOARD       </a>
+          <a class="navd" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN        </a>
+          <!--<a class="navd" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}</a -->
+          <a class="navd" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT        </a>
       </ul>
   </div>
 </nav>
