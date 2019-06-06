@@ -8,6 +8,7 @@ import { UserService } from 'src/app/shared/service/user.service';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
+  title = 'Balangoda Tours | Home';
 
   constructor(private userService: UserService) { }
 
