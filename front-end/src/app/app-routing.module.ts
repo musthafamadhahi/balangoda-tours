@@ -4,6 +4,7 @@ import { UserComponent } from './components/auth/user/user.component';
 import { SignInComponent } from './components/auth/user/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/user/sign-up/sign-up.component';
 import { LandingComponent } from './components/common/landing/landing.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
     path: 'signin', component: UserComponent,
     children: [{ path: '', component: SignInComponent }]
   },
+  { path: 'admin/dashboard', component: AdminDashboardComponent },
   {
     path: '', redirectTo: '/signin', pathMatch: 'full'
   }
