@@ -13,7 +13,7 @@
           <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/guide/dashboard']">guide DASHBOARD        </a>
           <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/tourist/dashboard']">tourist DASHBOARD       </a>
           <a class="navd" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN        </a>
-          <!--<a class="navd" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}</a -->
+          <a class="navd" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}       </a>
           <a class="navd" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT        </a>
       </ul>
   </div>

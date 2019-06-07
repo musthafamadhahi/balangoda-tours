@@ -11,7 +11,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule, FormsModule, FormGroup } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // components
 import { UserComponent } from './components/auth/user/user.component';
@@ -28,6 +28,7 @@ import { TouristDashboardComponent } from './components/tourist/tourist-dashboar
 
 // services
 import { UserService } from './shared/service/user.service';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 
 @NgModule({
@@ -59,7 +60,12 @@ import { UserService } from './shared/service/user.service';
     MatTooltipModule,
     MatSnackBarModule,
   ],
-  providers: [UserService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
+    UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
