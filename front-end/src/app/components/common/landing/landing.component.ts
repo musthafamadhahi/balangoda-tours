@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import * as $ from 'jquery';
 import { UserService } from 'src/app/shared/service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -10,7 +11,8 @@ import { UserService } from 'src/app/shared/service/user.service';
 export class LandingComponent implements OnInit {
   title = 'Balangoda Tours | Home';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
     // $('.btn1').click(function() {

@@ -1,7 +1,7 @@
 <div class="bac container-fluid slide" >
   <app-navbar></app-navbar>
   <div class="col-lg-12 al">
-      <a class="btn btn1" *ngIf="!isLoggedIn()" href="/signin">Sign In / Sign Up to continue</a>
+      <a class="btn btn1" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">Sign In / Sign Up to continue</a>
       <h3 style="color:rgba(7, 129, 150, 0.596); font-size: 20px;" *ngIf="isLoggedIn()"><strong><b>Welcome<br>to<br>Balangoda Tours</b></strong></h3>
   </div>
 </div>
