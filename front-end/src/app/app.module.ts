@@ -29,6 +29,7 @@ import { TouristDashboardComponent } from './components/tourist/tourist-dashboar
 // services
 import { UserService } from './shared/service/user.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { AddPackageComponent } from './components/admin/add-package/add-package.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     GuideDashboardComponent,
     TouristDashboardComponent,
     SideNavTouristComponent,
+    AddPackageComponent,
   ],
   imports: [
     BrowserModule,

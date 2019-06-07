@@ -7,6 +7,7 @@ import { LandingComponent } from './components/common/landing/landing.component'
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { TouristDashboardComponent } from './components/tourist/tourist-dashboard/tourist-dashboard.component';
 import { GuideDashboardComponent } from './components/guide/guide-dashboard/guide-dashboard.component';
+import { AddPackageComponent } from './components/admin/add-package/add-package.component';
 
 const routes: Routes = [
   // common
@@ -22,6 +23,7 @@ const routes: Routes = [
 
   // admin
   { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'admin/add-package', component: AddPackageComponent },
   { path: 'admin/guides', component: AdminDashboardComponent },
 
   // guide
