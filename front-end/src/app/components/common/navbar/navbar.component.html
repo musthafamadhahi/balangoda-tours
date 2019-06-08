@@ -1,20 +1,46 @@
 <nav class="transparent" >
-  <th>
-      <ul class="container">
-          <a class="navd" [routerLink]="['/']"> <b>Balangoda Tours</b></a>
-      </ul>
-  </th>
 
-  <div class="container">
+    <head>
+        <meta charset="utf-8">
+        <title>BalangodaTours</title>
+        <base href="/">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <!-- Favicon -->
+
+
+        <style>
+            body {font-family: "Lato", sans-serif}
+            .mySlides {display: none}
+            </style>
+        <!-- Icons -->
+        <!-- <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet"> -->
+        <!-- <link href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE"></script> -->
+
+      </head>
+
+<div class="row">
+  <div class="w3-bar w3-black w3-card">
       <ul class="pull-right">
-          <a class="navd" href="/about">ABOUT US        </a>
-          <a class="navd" href="/services">SERVICES   </a>
-          <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/admin/dashboard']">admin DASHBOARD       </a>
-          <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/guide/dashboard']">guide DASHBOARD        </a>
-          <a class="navd" *ngIf="isLoggedIn()" [routerLink]="['/tourist/dashboard']">tourist DASHBOARD       </a>
-          <a class="navd" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN        </a>
-          <a class="navd" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}       </a>
-          <a class="navd" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT        </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small  w3-left"  [routerLink]="['/']"> <b>Balangoda Tours</b></a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" href="/about">ABOUT US        </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" href="/services">SERVICES   </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" [routerLink]="['/admin/dashboard']">admin DASHBOARD       </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" [routerLink]="['/guide/dashboard']">guide DASHBOARD        </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" [routerLink]="['/tourist/dashboard']">tourist DASHBOARD       </a>
+          <!-- <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN        </a> -->
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}       </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT        </a>
       </ul>
   </div>
+</div>
 </nav>
