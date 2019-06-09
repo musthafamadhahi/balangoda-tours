@@ -8,3 +8,6 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
 require('./user.model');
 require('./loc.model');
 require('./hotel.model');
+require('./pkg.model');
+require('./tour.model');
+require('./guide.model');

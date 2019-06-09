@@ -21,9 +21,13 @@ var upload = multer({ storage: storage })
 const ctrlUser = require('../controllers/user.controller');
 const ctrlLoc = require('../controllers/loc.controller');
 const ctrlHotel = require('../controllers/hotel.controller');
+const ctrlPackage = require('../controllers/pkg.controller')
+const ctrlTour =require('../controllers/tour.controller');
+const ctrlGuide = require('../controllers/guide.controller');
 
 const jwtHelper = require('../config/jwtHelper');
 
+// Add Token Verification where needed
 // User Routes
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
@@ -32,17 +36,29 @@ router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 // Location Routes
 router.post('/locations/add',ctrlLoc.addLocation)
 router.post('/locations/images/new/:id',upload.any(), ctrlLoc.newImages)
-router.post('/locations/get/:id?', ctrlLoc.getLocations)
+router.get('/locations/get/:id?', ctrlLoc.getLocations)
 router.post('/locations/update/:id',ctrlLoc.updateLoc)
 
-
 // Package Routes
+router.post('/packages/add',ctrlPackage.addPackage)
+router.get('/packages/get',ctrlPackage.getPackages)
+router.post('/packages/update/:id',ctrlPackage.updatePackage)
 
 // Hotel Routes
 router.post('/hotels/add', ctrlHotel.addHotel)
 router.post('/hotels/images/new/:id',upload.any(), ctrlHotel.newImages)
-router.post('/hotels/get/:id?', ctrlHotel.getHotel)
+router.get('/hotels/get/:id?', ctrlHotel.getHotel)
 router.post('/hotels/update/:id',ctrlHotel.updateHotel)
+
+// Tour Routes
+router.post('/tours/add', ctrlTour.addTour)
+router.get('/tours/get/:id?', ctrlTour.getTours)
+router.post('/tours/update/:id',ctrlTour.updateTour)
+
+//Guide Routes
+router.post('/guides/add', ctrlGuide.addGuide)
+router.get('/guides/get/:id?', ctrlGuide.getGuides)
+router.post('/guides/update/:id',ctrlGuide.updateGuide)
 
 module.exports = router;
 
