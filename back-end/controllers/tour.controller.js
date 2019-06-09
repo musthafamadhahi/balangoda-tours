@@ -55,3 +55,15 @@ module.exports.updateTour = (req,res,next)=>{
         }
     )
 }
+
+module.exports.deleteTour = (req,res,next)=>{
+    Tour.deleteOne({_id:req.params.id},(err,ack)=>{
+        if(!err){
+            
+            res.status(200).send(ack.deletedCount+" Entries Deleted")
+        }
+        else{
+            res.send(err)
+        }
+    })
+}
