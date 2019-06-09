@@ -17,12 +17,25 @@
           <i class="material-icons">person</i>
           <p>User Profile</p>
         </a>
+      </li><li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <a class="nav-link" [routerLink]="['/tourist/tours']">
+          <i class="material-icons">navigation</i>
+          <p>Tours</p>
+        </a>
       </li>
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
         true}">
         <a class="nav-link" [routerLink]="['/tourist/packages']">
           <i class="material-icons">library_books</i>
           <p>Packages</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <a class="nav-link" [routerLink]="['/tourist/locations']">
+          <i class="material-icons">location_ons</i>
+          <p>Locations</p>
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
@@ -34,14 +47,14 @@
       </li>
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
         true}">
-        <a class="nav-link" [routerLink]="['/tourist/locations-list']">
-          <i class="material-icons">location_ons</i>
-          <p>Locations</p>
+        <a class="nav-link" [routerLink]="['/tourist/hotels']">
+          <i class="material-icons">store</i>
+          <p>Hotels</p>
         </a>
-      </li>
+    </li>
       <li class="nav-item">
         <a class="nav-link" (click)="onLogout()">
-          <i class="material-icons">logout</i>Log out
+          <i class="material-icons">logout</i>Log Out
         </a>
       </li>
     </ul>

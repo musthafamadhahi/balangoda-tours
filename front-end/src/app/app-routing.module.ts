@@ -1,6 +1,3 @@
-import { PackageListComponent } from './components/admin/packages/package-list/package-list.component';
-import { AddPackageComponent } from './components/admin/packages/add-package/add-package.component';
-import { PackagesComponent } from './components/admin/packages/packages.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './components/auth/user/user.component';
@@ -13,6 +10,9 @@ import { GuideDashboardComponent } from './components/guide/guide-dashboard/guid
 import { LocationsComponent } from './components/admin/locations/locations.component';
 import { AddLocationComponent } from './components/admin/locations/add-location/add-location.component';
 import { LocationListComponent } from './components/admin/locations/location-list/location-list.component';
+import { PackagesComponent } from './components/admin/packages/packages.component';
+import { AddPackageComponent } from './components/admin/packages/add-package/add-package.component';
+import { PackageListComponent } from './components/admin/packages/package-list/package-list.component';
 import { HotelsComponent } from './components/admin/hotels/hotels.component';
 import { AddHotelComponent } from './components/admin/hotels/add-hotel/add-hotel.component';
 import { HotelListComponent } from './components/admin/hotels/hotel-list/hotel-list.component';
@@ -20,6 +20,14 @@ import { TouristsComponent } from './components/admin/tourists/tourists.componen
 import { GuidesComponent } from './components/admin/guides/guides.component';
 import { GuideListComponent } from './components/admin/guides/guide-list/guide-list.component';
 import { AddGuideComponent } from './components/admin/guides/add-guide/add-guide.component';
+import { LeavesComponent } from './components/guide/leaves/leaves.component';
+import { AddLeaveComponent } from './components/guide/leaves/add-leave/add-leave.component';
+import { ToursComponent } from './components/tourist/tours/tours.component';
+import { AddTourComponent } from './components/tourist/tours/add-tour/add-tour.component';
+import { TouristPackagesComponent } from './components/tourist/tourist-packages/tourist-packages.component';
+import { TouristLocationsComponent } from './components/tourist/tourist-locations/tourist-locations.component';
+import { TouristGuidesComponent } from './components/tourist/tourist-guides/tourist-guides.component';
+import { TouristHotelsComponent } from './components/tourist/tourist-hotels/tourist-hotels.component';
 
 const routes: Routes = [
   // common
@@ -44,7 +52,7 @@ const routes: Routes = [
     children: [{ path: '', component: LocationListComponent }]
   },
   {
-    path: 'admin/add-hotel', component: HotelsComponent,
+    path: 'admin/hotels', component: HotelsComponent,
     children: [{ path: '', component: AddHotelComponent }]
   },
   {
@@ -52,7 +60,7 @@ const routes: Routes = [
     children: [{ path: '', component: HotelListComponent }]
   },
   {
-    path: 'admin/add-package', component: PackagesComponent,
+    path: 'admin/packages', component: PackagesComponent,
     children: [{ path: '', component: AddPackageComponent }]
   },
   {
@@ -60,7 +68,7 @@ const routes: Routes = [
     children: [{ path: '', component: PackageListComponent }]
   },
   {
-    path: 'admin/add-guide', component: GuidesComponent,
+    path: 'admin/guides', component: GuidesComponent,
     children: [{ path: '', component: AddGuideComponent }]
   },
   {
@@ -71,9 +79,30 @@ const routes: Routes = [
 
   // guide
   { path: 'guide/dashboard', component: GuideDashboardComponent },
+  {
+    path: 'guide/leave', component: LeavesComponent,
+    children: [{ path: '', component: AddLeaveComponent }]
+  },
 
   // tourist
   { path: 'tourist/dashboard', component: TouristDashboardComponent },
+  {
+    path: 'tourist/tours', component: ToursComponent,
+    children: [{ path: '', component: AddTourComponent }]
+  },
+  {
+    path: 'tourist/packages', component: TouristPackagesComponent
+  },
+  {
+    path: 'tourist/locations', component: TouristLocationsComponent
+  },
+  {
+    path: 'tourist/guides', component: TouristGuidesComponent
+  },
+  {
+    path: 'tourist/hotels', component: TouristHotelsComponent
+  },
+
 
   {path: '**', redirectTo: '/', pathMatch: 'full'},
 

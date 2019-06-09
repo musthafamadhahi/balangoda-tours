@@ -2,19 +2,21 @@
   <img src="/assets/img/signin.png" id="icon" alt="User Icon" />
 </div> -->
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
-  <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
+  <i class="material-icons">person</i><input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
   required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
   <div *ngIf="signUpForm.submitted && !fullName.valid">
     <label class="validation-message">This field is required.</label>
   </div>
-  <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+  <div></div>
+  <i class="material-icons">email</i><input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
   required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
   <div *ngIf="signUpForm.submitted && email.errors">
     <label  class="validation-message">This field is required.</label>
     <label  class="validation-message">Invalid email address.</label>
   </div>
+  <div></div>
   <input type="hidden" #role="ngModel" [(ngModel)]="userService.selectedUser.role" name="role" value="tourist">
-  <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+  <i class="material-icons">lock</i><input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
   minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
   <div *ngIf="signUpForm.submitted && password.errors">
     <label class="validation-message">This field is required.</label>
@@ -24,11 +26,13 @@
 </form>
 
 <!-- Success message -->
+<i class="material-icons" *ngIf="showSucessMessage">thumb_up</i>
 <div class="success" *ngIf="showSucessMessage">
   Saved successfully
 </div>
 
 <!-- Error message -->
+<i class="material-icons" *ngIf="serverErrorMessages">error</i>
 <div class="alert" *ngIf="serverErrorMessages">
   {{serverErrorMessages}}
 </div>
