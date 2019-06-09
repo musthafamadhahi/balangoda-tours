@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
       res => {
 // tslint:disable-next-line: no-string-literal
         this.userDetails = res['user'];
+        console.log(this.userDetails);
       },
       err => {
         console.log(err);
@@ -31,6 +32,33 @@ export class NavbarComponent implements OnInit {
     const userPayload = this.userService.getUserPayload();
     if (userPayload) {
       return userPayload.exp > Date.now() / 1000;
+    } else {
+      return false;
+    }
+  }
+
+  isAdmin() {
+    const role = this.userDetails.role;
+    if (role === 'admin') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isGuide() {
+    const role = this.userDetails.role;
+    if (role === 'guide') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isTourist() {
+    const role = this.userDetails.role;
+    if (role === 'tourist') {
+      return true;
     } else {
       return false;
     }

@@ -13,6 +13,7 @@
     <label  class="validation-message">This field is required.</label>
     <label  class="validation-message">Invalid email address.</label>
   </div>
+  <input type="hidden" #role="ngModel" [(ngModel)]="userService.selectedUser.role" name="role" value="tourist">
   <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
   minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
   <div *ngIf="signUpForm.submitted && password.errors">
