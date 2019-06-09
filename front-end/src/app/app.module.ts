@@ -28,10 +28,6 @@ import { SideNavGuideComponent } from './components/guide/side-nav-guide/side-na
 import { GuideDashboardComponent } from './components/guide/guide-dashboard/guide-dashboard.component';
 import { SideNavTouristComponent } from './components/tourist/side-nav-tourist/side-nav-tourist.component';
 import { TouristDashboardComponent } from './components/tourist/tourist-dashboard/tourist-dashboard.component';
-
-// services
-import { UserService } from './shared/service/user.service';
-import { AuthInterceptor } from './auth/auth.interceptor';
 import { HotelsComponent } from './components/admin/hotels/hotels.component';
 import { LocationsComponent } from './components/admin/locations/locations.component';
 import { AddHotelComponent } from './components/admin/hotels/add-hotel/add-hotel.component';
@@ -42,6 +38,21 @@ import { GuidesComponent } from './components/admin/guides/guides.component';
 import { AddGuideComponent } from './components/admin/guides/add-guide/add-guide.component';
 import { GuideListComponent } from './components/admin/guides/guide-list/guide-list.component';
 import { TouristsComponent } from './components/admin/tourists/tourists.component';
+import { LeavesComponent } from './components/guide/leaves/leaves.component';
+import { AddLeaveComponent } from './components/guide/leaves/add-leave/add-leave.component';
+import { LeaveListComponent } from './components/guide/leaves/leave-list/leave-list.component';
+import { ToursComponent } from './components/tourist/tours/tours.component';
+import { AddTourComponent } from './components/tourist/tours/add-tour/add-tour.component';
+import { TourListComponent } from './components/tourist/tours/tour-list/tour-list.component';
+import { TouristPackagesComponent } from './components/tourist/tourist-packages/tourist-packages.component';
+import { TouristGuidesComponent } from './components/tourist/tourist-guides/tourist-guides.component';
+import { TouristLocationsComponent } from './components/tourist/tourist-locations/tourist-locations.component';
+import { TouristHotelsComponent } from './components/tourist/tourist-hotels/tourist-hotels.component';
+
+// services
+import { UserService } from './shared/service/user.service';
+import { GuideService } from './shared/service/guide.service';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 
 @NgModule({
@@ -71,6 +82,16 @@ import { TouristsComponent } from './components/admin/tourists/tourists.componen
     AddGuideComponent,
     GuideListComponent,
     TouristsComponent,
+    LeavesComponent,
+    AddLeaveComponent,
+    LeaveListComponent,
+    ToursComponent,
+    AddTourComponent,
+    TourListComponent,
+    TouristPackagesComponent,
+    TouristGuidesComponent,
+    TouristLocationsComponent,
+    TouristHotelsComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +112,7 @@ import { TouristsComponent } from './components/admin/tourists/tourists.componen
     useClass: AuthInterceptor,
     multi: true
   },
-    UserService],
+    UserService, GuideService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

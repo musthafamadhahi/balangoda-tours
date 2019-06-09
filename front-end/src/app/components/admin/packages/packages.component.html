@@ -1,20 +1,6 @@
 <div class="wrapper ">
     <app-side-nav-admin></app-side-nav-admin>
     <div class="main-panel">
-        <nav mat-tab-nav-bar>
-            <a mat-tab-link class="nav-item nav-link" [routerLink]="['/admin/add-package']"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
-            <i class="material-icons">add_comment</i>
-                add Package
-            </a>
-            <a mat-tab-link class="nav-item nav-link" [routerLink]="['/admin/list-package']"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
-          <i class="material-icons">format_list_bulleted</i>
-                Packages list
-            </a>
-        </nav>
         <router-outlet></router-outlet>
     </div>
 </div>

@@ -17,7 +17,7 @@ export class SideNavAdminComponent implements OnInit {
 
   onLogout() {
     this.userService.deleteToken();
-    this.router.navigate(['/signin']);
+    this.router.navigate(['/']);
   }
 
 }

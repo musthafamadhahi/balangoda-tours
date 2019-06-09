@@ -8,9 +8,21 @@ import { UserService } from 'src/app/shared/service/user.service';
 })
 export class TouristDashboardComponent implements OnInit {
 
+  userDetails;
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUserProfile().subscribe(
+      res => {
+// tslint:disable-next-line: no-string-literal
+        this.userDetails = res['user'];
+      },
+      err => {
+        console.log(err);
+
+      }
+    );
   }
 
 }
