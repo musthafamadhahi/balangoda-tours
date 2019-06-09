@@ -21,6 +21,9 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { LandingComponent } from './components/common/landing/landing.component';
 import { SideNavAdminComponent } from './components/admin/side-nav-admin/side-nav-admin.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { AddPackageComponent } from './components/admin/packages/add-package/add-package.component';
+import { PackagesComponent } from './components/admin/packages/packages.component';
+import { PackageListComponent } from './components/admin/packages/package-list/package-list.component';
 import { SideNavGuideComponent } from './components/guide/side-nav-guide/side-nav-guide.component';
 import { GuideDashboardComponent } from './components/guide/guide-dashboard/guide-dashboard.component';
 import { SideNavTouristComponent } from './components/tourist/side-nav-tourist/side-nav-tourist.component';
@@ -29,7 +32,16 @@ import { TouristDashboardComponent } from './components/tourist/tourist-dashboar
 // services
 import { UserService } from './shared/service/user.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { AddPackageComponent } from './components/admin/add-package/add-package.component';
+import { HotelsComponent } from './components/admin/hotels/hotels.component';
+import { LocationsComponent } from './components/admin/locations/locations.component';
+import { AddHotelComponent } from './components/admin/hotels/add-hotel/add-hotel.component';
+import { HotelListComponent } from './components/admin/hotels/hotel-list/hotel-list.component';
+import { LocationListComponent } from './components/admin/locations/location-list/location-list.component';
+import { AddLocationComponent } from './components/admin/locations/add-location/add-location.component';
+import { GuidesComponent } from './components/admin/guides/guides.component';
+import { AddGuideComponent } from './components/admin/guides/add-guide/add-guide.component';
+import { GuideListComponent } from './components/admin/guides/guide-list/guide-list.component';
+import { TouristsComponent } from './components/admin/tourists/tourists.component';
 
 
 @NgModule({
@@ -47,6 +59,18 @@ import { AddPackageComponent } from './components/admin/add-package/add-package.
     TouristDashboardComponent,
     SideNavTouristComponent,
     AddPackageComponent,
+    PackagesComponent,
+    PackageListComponent,
+    HotelsComponent,
+    LocationsComponent,
+    AddHotelComponent,
+    HotelListComponent,
+    LocationListComponent,
+    AddLocationComponent,
+    GuidesComponent,
+    AddGuideComponent,
+    GuideListComponent,
+    TouristsComponent,
   ],
   imports: [
     BrowserModule,

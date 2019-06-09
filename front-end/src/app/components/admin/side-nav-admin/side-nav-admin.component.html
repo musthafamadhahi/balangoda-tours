@@ -6,6 +6,7 @@
 -->
   <div class="logo">
     <a [routerLink]="['/']" class="simple-text logo-normal">
+      <i class="material-icons">home</i>
       Balangoda Tours
     </a>
   </div>
@@ -27,14 +28,28 @@
       </li>
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
         true}">
+        <a class="nav-link" [routerLink]="['/admin/add-location']">
+          <i class="material-icons">location_ons</i>
+          <p>Locations</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+          <a class="nav-link" [routerLink]="['/admin/add-hotel']">
+            <i class="material-icons">store</i>
+            <p>Hotels</p>
+          </a>
+        </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
         <a class="nav-link" [routerLink]="['/admin/add-package']">
           <i class="material-icons">card_travel</i>
-          <p>Add Package</p>
+          <p>Packages</p>
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
         true}">
-        <a class="nav-link" [routerLink]="['/admin/guides']">
+        <a class="nav-link" [routerLink]="['/admin/add-guide']">
           <i class="material-icons">library_books</i>
           <p>Guides</p>
         </a>
@@ -42,21 +57,8 @@
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
         true}">
         <a class="nav-link" [routerLink]="['/admin/tourists']">
-          <i class="material-icons">library_books</i>
+          <i class="material-icons">group</i>
           <p>Tourists</p>
-        </a>
-      </li>
-      <li class="nav-item " routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/admin/locations']">
-          <i class="material-icons">location_ons</i>
-          <p>Add Locations</p>
-        </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-        true}">
-        <a class="nav-link" [routerLink]="['/admin/locations-list']">
-          <i class="material-icons">location_ons</i>
-          <p>Locations</p>
         </a>
       </li>
       <li class="nav-item">

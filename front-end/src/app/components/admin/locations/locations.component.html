@@ -1,0 +1,20 @@
+<div class="wrapper ">
+    <app-side-nav-admin></app-side-nav-admin>
+    <div class="main-panel">
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link class="nav-item nav-link" [routerLink]="['/admin/add-location']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+            <i class="material-icons">add_comment</i>
+                Add Location
+            </a>
+            <a mat-tab-link class="nav-item nav-link" [routerLink]="['/admin/list-location']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+          <i class="material-icons">format_list_bulleted</i>
+                Guides Location
+            </a>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>
