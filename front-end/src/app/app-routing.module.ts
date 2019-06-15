@@ -28,28 +28,32 @@ import { TouristPackagesComponent } from './components/tourist/tourist-packages/
 import { TouristLocationsComponent } from './components/tourist/tourist-locations/tourist-locations.component';
 import { TouristGuidesComponent } from './components/tourist/tourist-guides/tourist-guides.component';
 import { TouristHotelsComponent } from './components/tourist/tourist-hotels/tourist-hotels.component';
+import { AdminGuard } from './auth/admin.guard';
+import { GuideGuard } from './auth/guide.guard';
+import { TouristGuard } from './auth/tourist.guard';
+import { LoggedinGuard } from './auth/loggedin.guard';
 
 const routes: Routes = [
   // common
   { path: '', component: LandingComponent},
   {
     path: 'signup', component: UserComponent,
-    children: [{ path: '', component: SignUpComponent }]
+    children: [{ path: '', component: SignUpComponent,  canActivate: [LoggedinGuard] }]
   },
   {
     path: 'signin', component: UserComponent,
-    children: [{ path: '', component: SignInComponent }]
+    children: [{ path: '', component: SignInComponent, canActivate: [LoggedinGuard] }]
   },
 
   // admin
-  { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AdminGuard] },
   {
     path: 'admin/add-location', component: LocationsComponent,
     children: [{ path: '', component: AddLocationComponent }]
   },
   {
     path: 'admin/list-location', component: LocationsComponent,
-    children: [{ path: '', component: LocationListComponent }]
+    children: [{ path: '', component: LocationListComponent, canActivate: [AdminGuard] }]
   },
   {
     path: 'admin/hotels', component: HotelsComponent,
@@ -57,50 +61,50 @@ const routes: Routes = [
   },
   {
     path: 'admin/list-hotel', component: HotelsComponent,
-    children: [{ path: '', component: HotelListComponent }]
+    children: [{ path: '', component: HotelListComponent, canActivate: [AdminGuard] }]
   },
   {
     path: 'admin/packages', component: PackagesComponent,
-    children: [{ path: '', component: AddPackageComponent }]
+    children: [{ path: '', component: AddPackageComponent, canActivate: [AdminGuard] }]
   },
   {
     path: 'admin/list-package', component: PackagesComponent,
-    children: [{ path: '', component: PackageListComponent }]
+    children: [{ path: '', component: PackageListComponent, canActivate: [AdminGuard] }]
   },
   {
     path: 'admin/guides', component: GuidesComponent,
-    children: [{ path: '', component: AddGuideComponent }]
+    children: [{ path: '', component: AddGuideComponent , canActivate: [AdminGuard]}]
   },
   {
     path: 'admin/list-guide', component: GuidesComponent,
-    children: [{ path: '', component: GuideListComponent }]
+    children: [{ path: '', component: GuideListComponent , canActivate: [AdminGuard]}]
   },
-  { path: 'admin/tourists', component: TouristsComponent },
+  { path: 'admin/tourists', component: TouristsComponent, canActivate: [AdminGuard] },
 
   // guide
-  { path: 'guide/dashboard', component: GuideDashboardComponent },
+  { path: 'guide/dashboard', component: GuideDashboardComponent,  canActivate: [GuideGuard] },
   {
     path: 'guide/leave', component: LeavesComponent,
-    children: [{ path: '', component: AddLeaveComponent }]
+    children: [{ path: '', component: AddLeaveComponent ,  canActivate: [GuideGuard]}]
   },
 
   // tourist
-  { path: 'tourist/dashboard', component: TouristDashboardComponent },
+  { path: 'tourist/dashboard', component: TouristDashboardComponent, canActivate: [TouristGuard] },
   {
     path: 'tourist/tours', component: ToursComponent,
-    children: [{ path: '', component: AddTourComponent }]
+    children: [{ path: '', component: AddTourComponent , canActivate: [TouristGuard]}]
   },
   {
-    path: 'tourist/packages', component: TouristPackagesComponent
+    path: 'tourist/packages', component: TouristPackagesComponent, canActivate: [TouristGuard]
   },
   {
-    path: 'tourist/locations', component: TouristLocationsComponent
+    path: 'tourist/locations', component: TouristLocationsComponent, canActivate: [TouristGuard]
   },
   {
-    path: 'tourist/guides', component: TouristGuidesComponent
+    path: 'tourist/guides', component: TouristGuidesComponent, canActivate: [TouristGuard]
   },
   {
-    path: 'tourist/hotels', component: TouristHotelsComponent
+    path: 'tourist/hotels', component: TouristHotelsComponent, canActivate: [TouristGuard]
   },
 
 

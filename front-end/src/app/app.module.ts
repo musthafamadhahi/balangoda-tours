@@ -53,6 +53,10 @@ import { TouristHotelsComponent } from './components/tourist/tourist-hotels/tour
 import { UserService } from './shared/service/user.service';
 import { GuideService } from './shared/service/guide.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { AdminGuard } from './auth/admin.guard';
+import { GuideGuard } from './auth/guide.guard';
+import { TouristGuard } from './auth/tourist.guard';
+import { LoggedinGuard } from './auth/loggedin.guard';
 
 
 @NgModule({
@@ -112,7 +116,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     useClass: AuthInterceptor,
     multi: true
   },
-    UserService, GuideService],
+    UserService, GuideService, AdminGuard, GuideGuard, TouristGuard, LoggedinGuard, NavbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

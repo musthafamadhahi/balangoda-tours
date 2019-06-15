@@ -34,9 +34,9 @@
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-small  w3-left"  [routerLink]="['/']"><i class="material-icons">home</i>BALANGODA TOURS</a>
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" href="/about">ABOUT US        </a>
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" href="/services">SERVICES   </a>
-          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn() && isAdmin()" [routerLink]="['/admin/dashboard']">DASHBOARD       </a>
-          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn() && isGuide()" [routerLink]="['/guide/dashboard']">DASHBOARD        </a>
-          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn() && isTourist()" [routerLink]="['/tourist/dashboard']">DASHBOARD       </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn() && isAdmin()" [routerLink]="['/admin/dashboard']">aDASHBOARD       </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn() && isGuide()" [routerLink]="['/guide/dashboard']">gDASHBOARD        </a>
+          <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn() && isTourist()" [routerLink]="['/tourist/dashboard']">tDASHBOARD       </a>
           <!-- <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="!isLoggedIn()" [routerLink]="['/signin']">SIGN IN        </a> -->
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" >Logged in as {{userDetails.fullName.split(' ')[0]}}       </a>
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" *ngIf="isLoggedIn()" (click)="onLogout()">LOGOUT        </a>
