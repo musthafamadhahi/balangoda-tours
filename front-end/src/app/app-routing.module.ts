@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AdminGuard] },
   {
     path: 'admin/add-location', component: LocationsComponent,
-    children: [{ path: '', component: AddLocationComponent }]
+    children: [{ path: '', component: AddLocationComponent, canActivate: [AdminGuard] }]
   },
   {
     path: 'admin/list-location', component: LocationsComponent,
