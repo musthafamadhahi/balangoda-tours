@@ -14,6 +14,7 @@
                             <div *ngIf="signUpForm.submitted && !fullName.valid">
                               <label class="validation-message">This field is required.</label>
                             </div>
+                            <div></div>
                             <i class="material-icons">email</i><input type="text" #email="ngModel" [(ngModel)]="guideService.selectedUser.email" name="email" placeholder="Email"
                             required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
                             <div *ngIf="signUpForm.submitted && email.errors">
@@ -21,6 +22,7 @@
                               <label  class="validation-message">Invalid email address.</label>
                             </div>
                             <input type="hidden" #role="ngModel" [(ngModel)]="guideService.selectedUser.role" name="role" value="guide">
+                            <div></div>
                             <i class="material-icons">lock</i><input type="password" #password="ngModel" [(ngModel)]="guideService.selectedUser.password" name="password" placeholder="Password"
                             minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
                             <div *ngIf="signUpForm.submitted && password.errors">

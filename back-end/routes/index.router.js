@@ -32,6 +32,8 @@ const jwtHelper = require('../config/jwtHelper');
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
+router.get('/guides',ctrlUser.getGuides)
+router.get('/delete/:email',ctrlUser.deleteGuide)
 
 // Location Routes
 router.post('/locations/add',ctrlLoc.addLocation)

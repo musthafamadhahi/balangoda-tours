@@ -1,3 +1,20 @@
-<p>
-  guide-list works!
-</p>
+<table class="responsive-table highlight">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let guide of guideService.guides">
+    <td>{{guide.fullName}}</td>
+    <td>{{guide.email}}</td>
+    <td>{{guide.role}}</td>
+    <td>
+        <a class="action-btn" (click)="onDelete(guide.email)">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+  </tr>
+</table>

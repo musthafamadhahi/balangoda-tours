@@ -45,3 +45,20 @@ module.exports.userProfile = (req, res, next) =>{
         }
     );
 }
+
+module.exports.getGuides = (req, res) => {
+    User.find((err, docs) => {
+        if (!err) { res.send(docs); }
+        else { console.log('Error in Retriving Users :' + JSON.stringify(err, undefined, 2)); }
+    });
+}
+
+module.exports.deleteGuide = (req, res) => {
+    if (!ObjectId.isValid(req.params.email))
+        return res.status(400).send(`No record with given id : ${req.params.email}`);
+
+    User.findByIdAndRemove(req.params.email, (err, doc) => {
+        if (!err) { res.send(doc); }
+        else { console.log('Error in User Delete :' + JSON.stringify(err, undefined, 2)); }
+    });
+}

@@ -17,6 +17,8 @@ export class GuideService {
 
   noAuthHeader = { headers: new HttpHeaders({ NoAuth: 'True' }) };
 
+  guides: User[];
+
   constructor(private http: HttpClient) { }
 
   // HttpMethods
@@ -31,6 +33,14 @@ export class GuideService {
 
   getUserProfile() {
     return this.http.get(environment.apiBaseUrl + '/userProfile');
+  }
+
+  getGuideList() {
+    return this.http.get(environment.apiBaseUrl + '/guides');
+  }
+
+  deleteGuide(email: string) {
+    return this.http.delete(environment.apiBaseUrl + `/${email}`);
   }
 
 
