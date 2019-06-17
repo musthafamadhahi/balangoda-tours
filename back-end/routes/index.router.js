@@ -53,7 +53,7 @@ router.post('/hotels/add', ctrlHotel.addHotel)
 router.post('/hotels/images/new/:id',upload.any(), ctrlHotel.newImages)
 router.get('/hotels/get/:id?', ctrlHotel.getHotel)
 router.post('/hotels/update/:id',ctrlHotel.updateHotel)
-router.post('/hotels/delete/:id',ctrlHotel.deleteHotel)
+router.delete('/hotels/delete/:id',ctrlHotel.deleteHotel)
 
 // Tour Routes
 router.post('/tours/add', ctrlTour.addTour)

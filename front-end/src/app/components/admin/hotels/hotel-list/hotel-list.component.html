@@ -1,3 +1,21 @@
-<p>
-  hotel-list works!
-</p>
+<table class="responsive-table highlight">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let htl of hotelService.hotels">
+      <td>{{htl.name}}</td>
+      <td>{{htl.address}}</td>
+      <td>
+          <a class="action-btn" (click)="onEdit(htl)">
+            <i class="material-icons">edit</i>
+          </a>
+          <a class="action-btn" (click)="onDelete(htl._id)">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+    </tr>
+  </table>

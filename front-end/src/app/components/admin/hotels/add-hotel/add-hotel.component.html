@@ -8,7 +8,31 @@
                         <!-- <p class="card-category">Complete your profile</p> -->
                     </div>
                     <div class="card-body">
-
+                        <form #hotelForm="ngForm" (ngSubmit)="onSubmit(hotelForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="hotelService.selectedHotel._id">
+                            <div class="row">
+                              <div class="input-field col s12">
+                                  <label>Name :
+                                    <label class="red-text">*</label>
+                                  </label>
+                                <input type="text" name="name" #name="ngModel" [(ngModel)]="hotelService.selectedHotel.name" placeholder="Enter hotel name" required>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                  <label>Address :
+                                      <label class="red-text">*</label>
+                                  </label>
+                                <input type="text" name="address" #name="ngModel" [(ngModel)]="hotelService.selectedHotel.address" placeholder="Eg : Cinnamon Lakeside" required>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <button class="btn btn-custom right" type="button" (click)="resetForm(hotelForm)">Reset</button>
+                                <button class="btn btn-custom right" type="submit" [disabled]="!hotelForm.valid">Submit</button>
+                              </div>
+                            </div>
+                          </form>
                     </div>
                 </div>
             </div>
@@ -19,7 +43,27 @@
                         <!-- <p class="card-category">Complete your profile</p> -->
                     </div>
                     <div class="card-body">
-                        <app-hotel-list></app-hotel-list>
+                        <table class="responsive-table highlight col-md-12">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tr *ngFor="let htl of hotelService.hotels">
+                              <td>{{htl.name}}</td>
+                              <td>{{htl.address}}</td>
+                              <td>
+                                  <a class="action-btn" (click)="onEdit(htl)">
+                                    <i class="material-icons">edit</i>
+                                  </a>
+                                  <a class="action-btn" (click)="onDelete(htl._id,hotelForm)">
+                                    <i class="material-icons">delete</i>
+                                  </a>
+                                </td>
+                            </tr>
+                          </table>
                     </div>
                 </div>
             </div>
