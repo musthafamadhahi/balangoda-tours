@@ -1,0 +1,14 @@
+<table class="responsive-table highlight col-md-12">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of userService.users">
+      <td>{{user.fullName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.role}}</td>
+    </tr>
+  </table>

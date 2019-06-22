@@ -1,13 +1,17 @@
-<nav class="transparent" >
-  <ul class="container">
-      <b class="navd colorHover" [routerLink]="['/']"> <i class="material-icons">home</i> Balangoda Tours</b>
-  </ul>
-</nav>
+<div class="container-fluid" style="background-repeat: no-repeat;" [ngStyle]="{'background-image': getUrl()}">
+  <nav class="transparent" >
+    <ul class="container">
+        <b class="navd colorHover" [routerLink]="['/']"> <i class="material-icons">home</i> Balangoda Tours</b>
+    </ul>
+  </nav>
 
-<div class="wrapper">
-  <div id="formContent">
-    <h2 class="underlineHover"  routerLink="/signin"  routerLinkActive="active"> Sign In </h2>
-    <h2 class="underlineHover"  routerLink="/signup"  routerLinkActive="active">Sign Up </h2>
-    <router-outlet></router-outlet>
+  <div class="wrapper" >
+    <div id="formContent">
+      <h2 class="underlineHover"  routerLink="/signin"  routerLinkActive="active"> Sign In </h2>
+      <h2 class="underlineHover"  routerLink="/signup"  routerLinkActive="active">Sign Up </h2>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
+
+

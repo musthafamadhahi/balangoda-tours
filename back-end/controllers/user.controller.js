@@ -62,3 +62,15 @@ module.exports.deleteGuide = (req, res) => {
         else { console.log('Error in User Delete :' + JSON.stringify(err, undefined, 2)); }
     });
 }
+
+// module.exports.deleteGuide = (req,res,next)=>{
+//     Hotel.deleteOne({email:req.params.email},(err,ack)=>{
+//         if(!err){
+            
+//             res.status(200).send(ack.deletedCount+" Entries Deleted")
+//         }
+//         else{
+//             res.send(err)
+//         }
+//     })
+// }

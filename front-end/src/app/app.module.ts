@@ -57,6 +57,7 @@ import { AdminGuard } from './auth/admin.guard';
 import { GuideGuard } from './auth/guide.guard';
 import { TouristGuard } from './auth/tourist.guard';
 import { LoggedinGuard } from './auth/loggedin.guard';
+import { TouristListComponent } from './components/admin/tourists/tourist-list/tourist-list.component';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { LoggedinGuard } from './auth/loggedin.guard';
     TouristGuidesComponent,
     TouristLocationsComponent,
     TouristHotelsComponent,
+    TouristListComponent,
   ],
   imports: [
     BrowserModule,

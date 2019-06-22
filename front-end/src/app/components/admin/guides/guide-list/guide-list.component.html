@@ -8,13 +8,15 @@
     </tr>
   </thead>
   <tr *ngFor="let guide of guideService.guides">
-    <td>{{guide.fullName}}</td>
-    <td>{{guide.email}}</td>
-    <td>{{guide.role}}</td>
-    <td>
+
+      <td>{{guide.fullName}}</td>
+      <td>{{guide.email}}</td>
+      <td>{{guide.role}}</td>
+      <td>
         <a class="action-btn" (click)="onDelete(guide.email)">
           <i class="material-icons">delete</i>
         </a>
       </td>
+
   </tr>
 </table>

@@ -40,7 +40,7 @@ export class GuideService {
   }
 
   deleteGuide(email: string) {
-    return this.http.delete(environment.apiBaseUrl + `/${email}`);
+    return this.http.delete(environment.apiBaseUrl + `/delete/${email}`);
   }
 
 

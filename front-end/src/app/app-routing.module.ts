@@ -32,6 +32,7 @@ import { AdminGuard } from './auth/admin.guard';
 import { GuideGuard } from './auth/guide.guard';
 import { TouristGuard } from './auth/tourist.guard';
 import { LoggedinGuard } from './auth/loggedin.guard';
+import { TouristListComponent } from './components/admin/tourists/tourist-list/tourist-list.component';
 
 const routes: Routes = [
   // common
@@ -79,7 +80,8 @@ const routes: Routes = [
     path: 'admin/list-guide', component: GuidesComponent,
     children: [{ path: '', component: GuideListComponent , canActivate: [AdminGuard]}]
   },
-  { path: 'admin/tourists', component: TouristsComponent, canActivate: [AdminGuard] },
+  { path: 'admin/tourists', component: TouristsComponent,
+    children: [{ path: '', component: TouristListComponent , canActivate: [AdminGuard]}] },
 
   // guide
   { path: 'guide/dashboard', component: GuideDashboardComponent,  canActivate: [GuideGuard] },

@@ -17,6 +17,8 @@ export class UserService {
 
   noAuthHeader = { headers: new HttpHeaders({ NoAuth: 'True' }) };
 
+  users: User[];
+
   constructor(private http: HttpClient) { }
 
   // HttpMethods
@@ -31,6 +33,10 @@ export class UserService {
 
   getUserProfile() {
     return this.http.get(environment.apiBaseUrl + '/userProfile');
+  }
+
+  getUserList() {
+    return this.http.get(environment.apiBaseUrl + '/guides');
   }
 
 

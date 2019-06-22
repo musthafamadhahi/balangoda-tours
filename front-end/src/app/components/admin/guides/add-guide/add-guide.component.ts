@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { GuideService } from 'src/app/shared/service/guide.service';
+import { User } from 'src/app/shared/service/user.model';
 
+declare var M: any;
 
 @Component({
   selector: 'app-add-guide',
@@ -18,6 +20,8 @@ export class AddGuideComponent implements OnInit {
   constructor(public guideService: GuideService) { }
 
   ngOnInit() {
+    this.refreshGuideList();
+    // this.resetForm();
   }
 
   onSubmit(form: NgForm) {
@@ -26,6 +30,7 @@ export class AddGuideComponent implements OnInit {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(form);
+        this.refreshGuideList();
       },
       err => {
         if (err.status === 422) {
@@ -37,7 +42,11 @@ export class AddGuideComponent implements OnInit {
     );
   }
 
-  resetForm(form: NgForm) {
+
+  resetForm(form?: NgForm) {
+    if (form) {
+      form.reset();
+    }
     this.guideService.selectedUser = {
       fullName: '',
       email: '',
@@ -46,6 +55,22 @@ export class AddGuideComponent implements OnInit {
     };
     form.resetForm();
     this.serverErrorMessages = '';
+  }
+
+  refreshGuideList() {
+    this.guideService.getGuideList().subscribe((res) => {
+      this.guideService.guides = res as User[];
+    });
+  }
+
+  onDelete(email: string) {
+// tslint:disable-next-line: triple-equals
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.guideService.deleteGuide(email).subscribe((res) => {
+        this.refreshGuideList();
+        M.toast({ html: 'Deleted successfully', classes: 'rounded' });
+      });
+    }
   }
 
 }
